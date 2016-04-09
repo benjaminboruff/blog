@@ -46,4 +46,4 @@ Route::get('user/{id}', 'UserController@profile')->where('id', '[0-9]+');
 // display list of posts
 Route::get('user/{id}/posts', 'UserController@list_posts')->where('id', '[0-9]+');
 // display a post
-Route::get('/{slug}', 'PostController@show');
+Route::get('/{slug}', 'PostController@show')->where('slug', '[A-Za-z0-9-_]+');
