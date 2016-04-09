@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'PostController@index');
-Route::get('/home', 'PostController@index');
+Route::get('/home', 'PostController@index')->name('home');
 
 Route::auth();
 
@@ -46,4 +46,4 @@ Route::get('user/{id}', 'UserController@profile')->where('id', '[0-9]+');
 // display list of posts
 Route::get('user/{id}/posts', 'UserController@list_posts')->where('id', '[0-9]+');
 // display a post
-Route::get('/{slug}', 'PostController@show')->where('slug', '[A-Za-z0-9-_]+');
+Route::get('/{slug}', 'PostController@show')->where('slug', '[A-Za-z0-9-_]+')->name('post');
