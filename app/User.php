@@ -37,7 +37,7 @@ class User extends Authenticatable
     };
 
     // can user post?
-    public function()
+    public function can_post()
     {
       $role = $this->role;
       if($role == 'author' || $role == 'admin')
@@ -48,7 +48,7 @@ class User extends Authenticatable
     };
 
     // is the user an admin?
-    public function()
+    public function is_admin()
     {
       $role = $this->role;
       if($role == 'admin')
